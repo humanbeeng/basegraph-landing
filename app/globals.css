@@ -4,40 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette to gray/white/black for academic aesthetic */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.15 0 0);
-  --card: oklch(0.98 0 0);
-  --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(0.98 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.15 0 0);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.5 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.75 0 0);
-  --muted-foreground: oklch(0.4 0 0);
-  --accent: oklch(0.15 0 0);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0 0);
-  --input: oklch(0.88 0 0);
-  --ring: oklch(0.4 0 0);
-  --chart-1: oklch(0.3 0 0);
-  --chart-2: oklch(0.5 0 0);
-  --chart-3: oklch(0.7 0 0);
-  --chart-4: oklch(0.2 0 0);
-  --chart-5: oklch(0.6 0 0);
+  /* Gruvbox Light / Light Oats color palette */
+  --background: oklch(0.96 0.015 85);
+  --foreground: oklch(0.35 0.03 65);
+  --card: oklch(0.93 0.02 80);
+  --card-foreground: oklch(0.35 0.03 65);
+  --popover: oklch(0.93 0.02 80);
+  --popover-foreground: oklch(0.35 0.03 65);
+  --primary: oklch(0.45 0.08 40);
+  --primary-foreground: oklch(0.96 0.015 85);
+  --secondary: oklch(0.55 0.06 55);
+  --secondary-foreground: oklch(0.96 0.015 85);
+  --muted: oklch(0.88 0.015 75);
+  --muted-foreground: oklch(0.50 0.03 60);
+  --accent: oklch(0.65 0.10 100);
+  --accent-foreground: oklch(0.35 0.03 65);
+  --destructive: oklch(0.55 0.15 25);
+  --destructive-foreground: oklch(0.96 0.015 85);
+  --border: oklch(0.85 0.02 75);
+  --input: oklch(0.85 0.02 75);
+  --ring: oklch(0.65 0.10 100);
+  --chart-1: oklch(0.45 0.08 40);
+  --chart-2: oklch(0.55 0.12 130);
+  --chart-3: oklch(0.60 0.10 210);
+  --chart-4: oklch(0.50 0.08 25);
+  --chart-5: oklch(0.65 0.10 100);
   --radius: 0.25rem;
-  --sidebar: oklch(0.98 0 0);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(0.15 0 0);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.5 0 0);
-  --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.88 0 0);
-  --sidebar-ring: oklch(0.4 0 0);
+  --sidebar: oklch(0.93 0.02 80);
+  --sidebar-foreground: oklch(0.35 0.03 65);
+  --sidebar-primary: oklch(0.45 0.08 40);
+  --sidebar-primary-foreground: oklch(0.96 0.015 85);
+  --sidebar-accent: oklch(0.88 0.015 75);
+  --sidebar-accent-foreground: oklch(0.35 0.03 65);
+  --sidebar-border: oklch(0.85 0.02 75);
+  --sidebar-ring: oklch(0.65 0.10 100);
 }
 
 .dark {
