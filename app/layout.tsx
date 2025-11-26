@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   },
   description:
     "Turn Linear tasks into production-ready specs. Relay analyzes your tickets, gathers context from your team, and maps your codebase to generate specs that actually ship. Powered by deterministic code analysis.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
+  },
   keywords: [
     "AI code analysis",
     "Linear integration",
