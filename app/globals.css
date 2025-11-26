@@ -76,7 +76,7 @@
 }
 
 @theme inline {
-  --font-serif: "Lora", "Lora Fallback";
+  --font-serif: "Libertinus Serif", serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
