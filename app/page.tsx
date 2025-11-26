@@ -1,4 +1,5 @@
 import { Waitlist } from "@/components/waitlist"
+import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -38,6 +39,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Theme Toggle */}
+      <ThemeToggle />
       {/* Subtle geometric background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
