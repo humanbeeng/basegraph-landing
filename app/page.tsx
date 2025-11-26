@@ -94,11 +94,8 @@ export default function Home() {
             Basegraph is building the future of coding—one where humans and AI work in true partnership, producing
             better code and better developers.
           </p>
-          <p className="text-base text-muted-foreground italic border-t border-border pt-8">
-            For developers who think deeply. For teams that build intentionally. For organizations that value both
-            velocity and quality.
-          </p>
         </section>
+
 
         {/* Waitlist */}
         <section className="mb-16 md:mb-24">
@@ -107,6 +104,14 @@ export default function Home() {
             Be among the first to experience Basegraph. Join our waitlist to get early access.
           </p>
           <Waitlist />
+        </section>
+
+      <section className="mb-16 md:mb-24">
+        <p className="text-base text-muted-foreground italic border-t border-border pt-8">
+            For developers who think deeply. For teams that build intentionally. For organizations that value both
+            velocity and quality. 
+          </p>
+            <a className="text-sm text-muted-foreground underline" href="https://www.flaticon.com/free-icons/networking" title="Logo Credits">Logo Credits</a>
         </section>
       </div>
     </main>

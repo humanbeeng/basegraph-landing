@@ -9,7 +9,7 @@ import "./globals.css"
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Basegraph - Human-Centered AI Code Editor",
+  title: "Basegraph",
   description:
     "Reimagining software development with intelligent collaboration between human creativity and machine precision.",
   generator: "v0.app",
