@@ -3,8 +3,41 @@ import Link from "next/link"
 import Image from "next/image"
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Relay by Basegraph',
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description: 'Turn Linear tasks into production-ready specs. Relay analyzes your tickets, gathers context from your team, and maps your codebase to generate specs that actually ship.',
+    url: 'https://basegraph.app',
+    creator: {
+      '@type': 'Organization',
+      name: 'Basegraph',
+      url: 'https://basegraph.app',
+      sameAs: ['https://x.com/basegraph'],
+    },
+    featureList: [
+      'Deterministic code analysis',
+      'Linear integration',
+      'Automated spec generation',
+      'Codebase mapping',
+      'Team context gathering',
+    ],
+  }
+
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Subtle geometric background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
@@ -14,7 +47,7 @@ export default function Home() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto px-6 pt-20 pb-16 md:pt-32 md:pb-24">
+        <section className="max-w-4xl mx-auto px-6 pt-20 pb-16 md:pt-32 md:pb-24" aria-label="Hero">
           <div className="mb-6 flex items-center gap-3">
             <Image src="/logo.svg" alt="Relay logo" width={28} height={28} />
             <span className="text-sm font-mono tracking-widest text-muted-foreground uppercase">Relay by Basegraph</span>
@@ -39,14 +72,14 @@ export default function Home() {
               Powered by <strong className="text-foreground">Codegraph</strong>. Deterministic Code Context Lookup.
             </span>
           </div>
-        </header>
+        </section>
 
         {/* Philosophy */}
-        <section className="border-t border-border/50">
+        <section className="border-t border-border/50" aria-labelledby="philosophy-heading">
           <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
             <div className="grid md:grid-cols-[1fr,2fr] gap-8 md:gap-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
+                <h2 id="philosophy-heading" className="text-3xl md:text-4xl font-serif font-bold leading-tight">
                   Context Lives in People, Not Just Code.
                 </h2>
               </div>
@@ -66,9 +99,9 @@ export default function Home() {
         </section>
 
         {/* Why It Works */}
-        <section className="bg-card/50 border-y border-border/50">
+        <section className="bg-card/50 border-y border-border/50" aria-labelledby="comparison-heading">
           <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-16">
+            <h2 id="comparison-heading" className="text-3xl md:text-4xl font-serif font-bold mb-16">
               Why Deterministic Beats Semantic
             </h2>
             
@@ -129,9 +162,9 @@ export default function Home() {
         </section>
 
         {/* Integration */}
-        <section className="border-b border-border/50">
+        <section className="border-b border-border/50" aria-labelledby="integration-heading">
           <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-16">
+            <h2 id="integration-heading" className="text-3xl md:text-4xl font-serif font-bold mb-16">
               Ships Where You Work
             </h2>
             
@@ -173,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Closing */}
-        <section className="border-b border-border/50">
+        <section className="border-b border-border/50" aria-label="Call to action">
           <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               Stop letting your AI agents guess. Give them specs that actually work.
@@ -182,10 +215,10 @@ export default function Home() {
         </section>
 
         {/* Early Access Note */}
-        <section className="border-b border-border/50">
+        <section className="border-b border-border/50" aria-labelledby="early-access-heading">
           <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
             <div className="space-y-6">
-              <h3 className="text-xl font-serif font-bold">Early Access</h3>
+              <h2 id="early-access-heading" className="text-xl font-serif font-bold">Early Access</h2>
               <p className="text-foreground/80 leading-relaxed">
                 Relay is in private beta. Code indexing currently happens on our servers. Self-hosted deployments are on the roadmap for teams with strict data residency requirements.
               </p>
