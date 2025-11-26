@@ -19,12 +19,12 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-[1.1] tracking-tight">
-            Precision Planning<br />
-            <span className="text-primary/80">for AI Development.</span>
+            Turn Linear tasks into<br />
+            <span className="text-primary/80">production-ready specs</span>
           </h1>
           
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/80 max-w-2xl mb-10">
-            Relay bridges the gap between your issue tracker and your codebase. It acts as an architect, analyzing requirements to generate a verified specification for your coding agents.
+            Relay analyzes your tickets, gathers context from your team, and maps your codebase to generate specs that actually ship. Hand them to any developer or AI agent.
           </p>
           
           <div className="mb-12">
