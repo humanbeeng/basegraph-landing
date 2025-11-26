@@ -190,8 +190,16 @@ export default function Home() {
                 Relay is in private beta. Code indexing currently happens on our servers. Self-hosted deployments are on the roadmap for teams with strict data residency requirements.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                We're working closely with early adopters to shape the product. If you have specific security or compliance needs, reach out—we'd love to hear what you're building.
+                We're working closely with early adopters to shape the product. We'd love to hear your feedback and thoughts.
               </p>
+              <div className="pt-2">
+                <Link 
+                  href="mailto:nithinraj@basegraph.app"
+                  className="inline-flex items-center gap-2 text-sm font-mono text-foreground hover:text-accent transition-colors"
+                >
+                  Reach out → nithinraj@basegraph.app
+                </Link>
+              </div>
             </div>
           </div>
         </section>
