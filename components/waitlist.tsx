@@ -63,23 +63,20 @@ export function Waitlist() {
   }
 
   return (
-    <div className="space-y-2">
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
-        <Input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={isLoading}
-          required
-          className="flex-1"
-        />
-        <Button type="submit" disabled={isLoading} className="whitespace-nowrap">
-          {isLoading ? 'Requesting...' : 'Request Access'}
-        </Button>
-      </form>
-      <p className="text-xs text-muted-foreground font-mono">Works with Linear & GitHub</p>
-    </div>
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
+      <Input
+        type="email"
+        placeholder="Enter your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        disabled={isLoading}
+        required
+        className="flex-1"
+      />
+      <Button type="submit" disabled={isLoading} className="whitespace-nowrap">
+        {isLoading ? 'Requesting...' : 'Request Access'}
+      </Button>
+    </form>
   )
 }
 

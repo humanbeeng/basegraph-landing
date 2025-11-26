@@ -34,76 +34,130 @@ export default function Home() {
           </div>
           
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'oklch(0.65 0.15 145)' }}></div>
             <span className="font-mono">
               Powered by <strong className="text-foreground">Codegraph</strong>. Deterministic Code Context Lookup.
             </span>
           </div>
         </header>
 
-        {/* How It Works */}
-        <section className="bg-card/50 border-y border-border/50">
+        {/* Philosophy */}
+        <section className="border-t border-border/50">
           <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                Context First, Code Second.
-              </h2>
-              <p className="text-lg text-foreground/80 max-w-2xl">
-                Relay ensures your tools understand the full scope of a task before writing a single line of code.
-              </p>
-            </div>
-            
-            <div className="space-y-12 md:space-y-16">
-              {/* Step 1 */}
-              <div className="grid md:grid-cols-[auto,1fr] gap-6 md:gap-10">
-                <div className="flex items-start">
-                  <span className="font-mono text-6xl md:text-7xl font-bold text-border/80 leading-none">01</span>
-                </div>
-                <div className="pt-2">
-                  <h3 className="text-xl font-serif font-bold mb-3">Refining Intent</h3>
-                  <p className="text-lg leading-relaxed text-foreground/80">
-                    Relay connects to Linear and GitHub Issues. It reviews new tickets and proactively asks the reporter clarifying questions to resolve ambiguities early.
-                  </p>
-                </div>
+            <div className="grid md:grid-cols-[1fr,2fr] gap-8 md:gap-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
+                  Context Lives in People, Not Just Code.
+                </h2>
               </div>
-              
-              {/* Step 2 */}
-              <div className="grid md:grid-cols-[auto,1fr] gap-6 md:gap-10">
-                <div className="flex items-start">
-                  <span className="font-mono text-6xl md:text-7xl font-bold text-border/80 leading-none">02</span>
-                </div>
-                <div className="pt-2">
-                  <h3 className="text-xl font-serif font-bold mb-3">Compiler-Grade Analysis</h3>
-                  <p className="text-lg leading-relaxed text-foreground/80">
-                    Unlike standard semantic search, our Codegraph engine builds a precise map of your codebase. It traces imports, function calls, and definitions to identify exactly which files and logic paths are involved.
-                  </p>
-                </div>
-              </div>
-              
-              {/* Step 3 */}
-              <div className="grid md:grid-cols-[auto,1fr] gap-6 md:gap-10">
-                <div className="flex items-start">
-                  <span className="font-mono text-6xl md:text-7xl font-bold text-border/80 leading-none">03</span>
-                </div>
-                <div className="pt-2">
-                  <h3 className="text-xl font-serif font-bold mb-3">The Implementation Spec</h3>
-                  <p className="text-lg leading-relaxed text-foreground/80">
-                    The result is a comprehensive <code className="font-mono text-sm bg-muted px-2 py-0.5 rounded">spec.md</code>. This document outlines the architecture, identifies potential edge cases, and provides a clear blueprint. You can hand this spec to any coding agent (or human developer) for flawless execution.
-                  </p>
-                </div>
+              <div className="space-y-6">
+                <p className="text-lg leading-relaxed text-foreground/80">
+                  Edge cases don't live in your codebase—they live in your team's heads. Business logic nuances. Production gotchas. That one integration everyone forgets about.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground/80">
+                  Relay asks the right questions. It pulls context from the people who know your product, then maps that against your actual codebase constraints. What you get is a spec that accounts for both the business logic edge cases humans catch and the architectural limitations code analysis reveals.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground font-medium">
+                  This is the step most AI tools skip. We built Relay because planning is too important to automate away.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Workflow */}
-        <section className="border-b border-border/50">
-          <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">
-              Designed for Your Existing Tools.
+        {/* Why It Works */}
+        <section className="bg-card/50 border-y border-border/50">
+          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-16">
+              Why Deterministic Beats Semantic
             </h2>
             
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+              {/* Problem with current tools */}
+              <div>
+                <h3 className="text-xl font-serif font-bold mb-4 text-muted-foreground">Semantic Search (Cursor, Aider, etc.)</h3>
+                <ul className="space-y-4 text-foreground/70">
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">×</span>
+                    <span>Embeddings miss exact import chains and call graphs</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">×</span>
+                    <span>Can't verify if a function actually exists or trace its dependencies</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">×</span>
+                    <span>Guesses at architecture based on similarity, not structure</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">×</span>
+                    <span>Reads 50+ files hoping to find the right context</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Codegraph approach */}
+              <div>
+                <h3 className="text-xl font-serif font-bold mb-4">Codegraph (Compiler-Based)</h3>
+                <ul className="space-y-4">
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span>Traces exact import paths and function call chains</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span>Verifies every symbol exists and maps its relationships</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span>Understands actual architecture from parse trees, not vibes</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span>Fetches only the 3-5 files that actually matter</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-16 p-6 bg-background/50 border border-border rounded-lg">
+              <p className="text-lg leading-relaxed text-foreground/90">
+                <strong>Result:</strong> Your AI agent gets a spec with verified imports, actual function signatures, and real architectural constraints—not hallucinated ones. No more "this function doesn't exist" or "wrong number of parameters" errors after 20 minutes of generation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Integration */}
+        <section className="border-b border-border/50">
+          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-16">
+              Ships Where You Work
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl font-serif font-bold mb-4">Onboarding in Minutes</h3>
+                <p className="text-lg leading-relaxed text-foreground/80 mb-4">
+                  Connect your Linear workspace. Point to your repo. Done.
+                </p>
+                <p className="text-foreground/70">
+                  No training data to upload. No context windows to configure. Relay immediately understands your codebase through static analysis.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-serif font-bold mb-4">No New Dashboard</h3>
+                <p className="text-lg leading-relaxed text-foreground/80 mb-4">
+                  Relay lives in Linear threads. Specs appear as comments. Your workflow stays intact.
+                </p>
+                <p className="text-foreground/70">
+                  Everything happens where you already work. No context-switching to yet another tool.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
                 <svg className="w-5 h-5 text-foreground" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -111,34 +165,33 @@ export default function Home() {
                 <span className="font-medium">Linear</span>
               </div>
               
-              <div className="flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
-                <svg className="w-5 h-5 text-foreground" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-                <span className="font-medium">GitHub</span>
-              </div>
-              
               <span className="text-sm text-muted-foreground font-mono">
-                Jira coming Q1 2026
+                GitHub & Jira coming Q1 2026
               </span>
             </div>
           </div>
         </section>
 
-        {/* Philosophy */}
+        {/* Closing */}
         <section className="border-b border-border/50">
-          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
-            <div className="grid md:grid-cols-[1fr,2fr] gap-8 md:gap-16">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
-                  Human-Centered Engineering.
-                </h2>
-              </div>
-              <div>
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  We are building for a future where AI augments human capability rather than replacing it. Relay is designed to help developers think more deeply about architecture and design, while automating the implementation details.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+              Stop letting your AI agents guess. Give them specs that actually work.
+            </p>
+          </div>
+        </section>
+
+        {/* Early Access Note */}
+        <section className="border-b border-border/50">
+          <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+            <div className="space-y-6">
+              <h3 className="text-xl font-serif font-bold">Early Access</h3>
+              <p className="text-foreground/80 leading-relaxed">
+                Relay is in private beta. Code indexing currently happens on our servers. Self-hosted deployments are on the roadmap for teams with strict data residency requirements.
+              </p>
+              <p className="text-foreground/80 leading-relaxed">
+                We're working closely with early adopters to shape the product. If you have specific security or compliance needs, reach out—we'd love to hear what you're building.
+              </p>
             </div>
           </div>
         </section>
@@ -146,26 +199,12 @@ export default function Home() {
         {/* Footer */}
         <footer className="max-w-4xl mx-auto px-6 py-12 md:py-16">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <Link 
-                href="#" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
-              >
-                Research & Docs
-              </Link>
-              <Link 
-                href="https://github.com/basegraph" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
-              >
-                GitHub
-              </Link>
-              <Link 
-                href="https://twitter.com/basegraph" 
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
-              >
-                Twitter
-              </Link>
-            </div>
+            <Link 
+              href="https://x.com/basegraph" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
+            >
+              Twitter
+            </Link>
             <p className="text-sm text-muted-foreground font-mono">
               © 2025 Basegraph.
             </p>
