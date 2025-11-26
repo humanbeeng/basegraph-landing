@@ -1,5 +1,6 @@
 import { Waitlist } from "@/components/waitlist"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -14,13 +15,14 @@ export default function Home() {
       <div className="relative z-10">
         {/* Hero Section */}
         <header className="max-w-4xl mx-auto px-6 pt-20 pb-16 md:pt-32 md:pb-24">
-          <div className="mb-6">
+          <div className="mb-6 flex items-center gap-3">
+            <Image src="/logo.svg" alt="Relay logo" width={28} height={28} />
             <span className="text-sm font-mono tracking-widest text-muted-foreground uppercase">Relay by Basegraph</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-[1.1] tracking-tight">
             Turn Linear tasks into<br />
-            <span className="text-primary/80">production-ready specs</span>
+            <span className="text-accent">production-ready specs</span>
           </h1>
           
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/80 max-w-2xl mb-10">
@@ -34,38 +36,17 @@ export default function Home() {
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
             <span className="font-mono">
-              Powered by <strong className="text-foreground">Codegraph</strong>. Deterministic context lookup, engineered for accuracy.
+              Powered by <strong className="text-foreground">Codegraph</strong>. Deterministic Code Context Lookup.
             </span>
           </div>
         </header>
-
-        {/* The Context Challenge */}
-        <section className="border-t border-border/50">
-          <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
-            <div className="grid md:grid-cols-[1fr,2fr] gap-8 md:gap-16">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight">
-                  The Missing Link in Autonomous Coding.
-                </h2>
-              </div>
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  Great code starts with clear requirements. Current AI coding tools are powerful, but they often struggle when task boundaries are vague. They have to guess at dependencies and APIs, which leads to hallucinations and rework.
-                </p>
-                <p className="text-lg leading-relaxed text-foreground font-medium">
-                  We believe the solution isn't just a better model—it's better context.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* How It Works */}
         <section className="bg-card/50 border-y border-border/50">
           <div className="max-w-4xl mx-auto px-6 py-20 md:py-28">
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                Architecture First, Code Second.
+                Context First, Code Second.
               </h2>
               <p className="text-lg text-foreground/80 max-w-2xl">
                 Relay ensures your tools understand the full scope of a task before writing a single line of code.

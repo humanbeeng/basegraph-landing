@@ -9,18 +9,12 @@ import "./globals.css"
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Basegraph",
+  title: "Relay by Basegraph",
   description:
-    "Reimagining software development with intelligent collaboration between human creativity and machine precision.",
-  generator: "v0.app",
+    "Turn Linear tasks into production-ready specs. Relay analyzes your tickets, gathers context from your team, and maps your codebase to generate specs that actually ship.",
   icons: {
     icon: [
-      { url: "/placeholder-logo.png", type: "image/png" },
-      { url: "/placeholder-logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/placeholder-logo.png", sizes: "16x16", type: "image/png" },
-    ],
-    apple: [
-      { url: "/placeholder-logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
   },
 }
