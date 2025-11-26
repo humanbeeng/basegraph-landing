@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Lora, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
 const _lora = Lora({ subsets: ["latin"], variable: "--font-serif" })
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`font-serif antialiased`}>
         {children}
         <Analytics />
+        <Toaster />
       </body>
     </html>
   )

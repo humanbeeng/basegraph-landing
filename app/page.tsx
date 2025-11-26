@@ -1,3 +1,5 @@
+import { Waitlist } from "@/components/waitlist"
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
@@ -96,6 +98,15 @@ export default function Home() {
             For developers who think deeply. For teams that build intentionally. For organizations that value both
             velocity and quality.
           </p>
+        </section>
+
+        {/* Waitlist */}
+        <section className="mb-16 md:mb-24">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Join the Waitlist</h2>
+          <p className="text-lg leading-relaxed mb-6">
+            Be among the first to experience Basegraph. Join our waitlist to get early access.
+          </p>
+          <Waitlist />
         </section>
       </div>
     </main>
