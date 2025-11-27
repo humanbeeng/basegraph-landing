@@ -74,7 +74,7 @@ export function Waitlist() {
         className="flex-1"
       />
       <Button type="submit" disabled={isLoading} className="whitespace-nowrap">
-        {isLoading ? 'Requesting...' : 'Request Access'}
+        {isLoading ? 'Adding you..' : 'Join Waitlist'}
       </Button>
     </form>
   )
