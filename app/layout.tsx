@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Geist_Mono } from "next/font/google"
 import "@fontsource/libertinus-serif"
 import { Analytics } from "@vercel/analytics/next"
@@ -17,11 +17,6 @@ export const metadata: Metadata = {
   },
   description:
     "Turn Linear tasks into production-ready specs. Relay analyzes your tickets, gathers context from your team, and maps your codebase to generate specs that actually ship. Powered by deterministic code analysis.",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    viewportFit: 'cover',
-  },
   keywords: [
     "AI code analysis",
     "Linear integration",
@@ -86,6 +81,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://basegraph.app",
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 }
 
 export default function RootLayout({

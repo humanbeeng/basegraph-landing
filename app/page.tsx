@@ -1,5 +1,6 @@
 import { Waitlist } from "@/components/waitlist"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LoginButton } from "@/components/login-button"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -39,6 +40,14 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Login Button */}
+      <div className="fixed z-50 flex items-center gap-3" style={{
+        top: 'calc(1.5rem + env(safe-area-inset-top))',
+        right: 'calc(4.5rem + env(safe-area-inset-right))'
+      }}>
+        <LoginButton />
+      </div>
+      
       {/* Theme Toggle */}
       <ThemeToggle />
       {/* Subtle geometric background */}

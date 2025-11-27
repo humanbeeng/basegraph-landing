@@ -38,6 +38,10 @@
   --sidebar-accent-foreground: oklch(0.30 0.02 60);
   --sidebar-border: oklch(0.85 0.015 75);
   --sidebar-ring: oklch(0.55 0.11 38);
+  --scrollbar-track: oklch(0.90 0.012 75);
+  --scrollbar-thumb: oklch(0.55 0.11 38);
+  --scrollbar-thumb-hover: oklch(0.50 0.12 35);
+  --scrollbar-border: oklch(0.90 0.012 75);
 }
 
 .dark {
@@ -74,6 +78,10 @@
   --sidebar-accent-foreground: oklch(0.95 0.005 60);
   --sidebar-border: oklch(0.25 0.005 60);
   --sidebar-ring: oklch(0.65 0.12 45);
+  --scrollbar-track: oklch(0.25 0.005 60);
+  --scrollbar-thumb: oklch(0.65 0.12 45);
+  --scrollbar-thumb-hover: oklch(0.70 0.13 45);
+  --scrollbar-border: oklch(0.25 0.005 60);
 }
 
 @theme inline {
@@ -144,14 +152,20 @@
     @apply font-serif leading-relaxed;
   }
 
-  /* Custom scrollbar styling */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: oklch(0.55 0.11 38) oklch(0.90 0.012 75);
+  :root {
+    color-scheme: light;
   }
 
-  .dark * {
-    scrollbar-color: oklch(0.65 0.12 45) oklch(0.25 0.005 60);
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Custom scrollbar styling */
+  :root,
+  body,
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   }
 
   *::-webkit-scrollbar {
@@ -160,30 +174,17 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: oklch(0.90 0.012 75);
+    background: var(--scrollbar-track);
     border-radius: 5px;
-  }
-
-  .dark *::-webkit-scrollbar-track {
-    background: oklch(0.25 0.005 60);
   }
 
   *::-webkit-scrollbar-thumb {
-    background: oklch(0.55 0.11 38);
+    background: var(--scrollbar-thumb);
     border-radius: 5px;
-    border: 2px solid oklch(0.90 0.012 75);
-  }
-
-  .dark *::-webkit-scrollbar-thumb {
-    background: oklch(0.65 0.12 45);
-    border: 2px solid oklch(0.25 0.005 60);
+    border: 2px solid var(--scrollbar-border);
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.50 0.12 35);
-  }
-
-  .dark *::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.70 0.13 45);
+    background: var(--scrollbar-thumb-hover);
   }
 }
