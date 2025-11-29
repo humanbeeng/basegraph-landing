@@ -7,8 +7,8 @@ export function LoginButton() {
   const handleLogin = async () => {
     try {
       await signIn.social({
-        provider: "google",
-        callbackURL: "/",
+        provider: "github",
+        callbackURL: "/dashboard",
       })
     } catch (error) {
       console.error("Login failed:", error)

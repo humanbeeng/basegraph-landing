@@ -1,6 +1,7 @@
 import { Waitlist } from "@/components/waitlist"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LoginButton } from "@/components/login-button"
+import { AuthRedirect } from "@/components/auth-redirect"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -35,6 +36,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
+      {/* Redirect signed-in users to dashboard */}
+      <AuthRedirect />
+      
       {/* Structured Data */}
       <script
         type="application/ld+json"
