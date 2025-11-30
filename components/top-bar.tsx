@@ -58,7 +58,7 @@ export function TopBar() {
                 <ChevronRight className="size-3.5 mx-1 text-muted-foreground/60" />
               )}
               {crumb.isCurrentPage ? (
-                <span className="text-caption font-medium text-foreground">
+                <span className="text-caption font-serif font-medium text-foreground">
                   {crumb.label}
                 </span>
               ) : (

@@ -14,6 +14,8 @@ export interface TypewriterProps {
   className?: string
   /** Additional className for each line */
   lineClassName?: string
+  /** Callback when typing is complete */
+  onComplete?: () => void
 }
 
 /**
@@ -21,10 +23,11 @@ export interface TypewriterProps {
  */
 export function Typewriter({ 
   messages, 
-  typingSpeed = 11, 
+  typingSpeed = 10, 
   delayBetweenMessages = 200,
   className,
   lineClassName = "text-muted-foreground",
+  onComplete,
 }: TypewriterProps) {
   const [displayedLines, setDisplayedLines] = useState<string[]>([])
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0)
@@ -32,6 +35,9 @@ export function Typewriter({
 
   useEffect(() => {
     if (currentMessageIndex >= messages.length) {
+      if (onComplete) {
+        onComplete()
+      }
       return
     }
 
