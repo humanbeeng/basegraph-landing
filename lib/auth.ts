@@ -1,12 +1,7 @@
 import { betterAuth } from "better-auth"
 
-const deploymentBaseURL =
-  process.env.NEXT_PUBLIC_APP_URL?.trim() ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
-
 export const auth = betterAuth({
-  baseURL: deploymentBaseURL,
-  // No database configuration
+  baseURL: process.env.NEXT_PUBLIC_APP_URL,
   socialProviders: {
     // google: {
     //     clientId: process.env.GOOGLE_CLIENT_ID as string,
