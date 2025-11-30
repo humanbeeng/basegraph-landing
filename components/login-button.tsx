@@ -7,7 +7,7 @@ export function LoginButton() {
   const handleLogin = async () => {
     try {
       await signIn.social({
-        provider: "github",
+        provider: "linear",
         callbackURL: "/dashboard",
       })
     } catch (error) {

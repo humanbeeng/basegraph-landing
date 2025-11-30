@@ -92,7 +92,7 @@ export async function POST() {
             Email: email,
             Name: name || '',
             'Joined At': new Date().toISOString(),
-            Source: 'Github',
+            Source: 'Linear',
           },
         }),
       }

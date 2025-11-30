@@ -1,11 +1,14 @@
 "use client"
 
 import { useSession } from "@/lib/auth-client"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { LogoutButton } from "@/components/logout-button"
-import Link from "next/link"
+import { Typewriter } from "@/components/typewriter"
 import { useRouter } from "next/navigation"
 import { useEffect, useRef } from "react"
+
+const messages = [
+  "Welcome to your dashboard. Connect your Linear and GitHub to get started.",
+  "It's only going to take under 30s to establish Relay's context.",
+]
 
 export default function DashboardPage() {
   const { data: session, isPending } = useSession()
@@ -40,9 +43,9 @@ export default function DashboardPage() {
   // Loading state
   if (isPending) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background">
+      <div className="flex h-full items-center justify-center">
         <p className="text-muted-foreground">Loading...</p>
-      </main>
+      </div>
     )
   }
 
@@ -52,38 +55,11 @@ export default function DashboardPage() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      {/* Simple header */}
-      <header className="border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-serif font-bold">
-            Basegraph
-          </Link>
-          <LogoutButton />
-        </div>
-      </header>
-
-      {/* Main content */}
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-8">Welcome back!</h1>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Your Profile</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Name</p>
-              <p className="text-lg">{session.user.name || "—"}</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Email</p>
-              <p className="text-lg">{session.user.email || "—"}</p>
-            </div>
-          </CardContent>
-        </Card>
+    <div className="content-spacing">
+      <div className="page-header">
+        <h1 className="h3">Hey {session.user?.name?.split(" ")[0]}!</h1>
       </div>
-    </main>
+      <Typewriter messages={messages} className="text-lg" />
+    </div>
   )
 }
-
