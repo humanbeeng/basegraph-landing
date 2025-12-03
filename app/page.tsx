@@ -46,12 +46,12 @@ export default function Home() {
       />
       
       {/* Login Button */}
-      <div className="fixed z-50 flex items-center gap-3" style={{
+      {/* <div className="fixed z-50 flex items-center gap-3" style={{
         top: 'calc(var(--space-6) + env(safe-area-inset-top))',
         right: 'calc(4.5rem + env(safe-area-inset-right))'
       }}>
         <LoginButton />
-      </div>
+      </div> */}
       
       {/* Theme Toggle */}
       <ThemeToggle />
@@ -67,7 +67,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="page-container pt-20 pb-16 md:pt-32 md:pb-24" aria-label="Hero">
           <div className="mb-6 cluster">
-            <Image src="/logo.svg" alt="Relay logo" width={28} height={28} />
+            {/* <Image src="/logo.svg" alt="Relay logo" width={28} height={28} /> */}
             <span className="text-overline">Relay by Basegraph</span>
           </div>
           
@@ -209,13 +209,6 @@ export default function Home() {
             </div>
 
             <div className="mt-12 cluster">
-              <div className="flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
-                <svg className="w-5 h-5 text-foreground" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                <span className="font-medium">Linear</span>
-              </div>
-              
               <span className="text-caption text-muted-foreground">
                 GitHub & Jira coming Q1 2026
               </span>
@@ -248,9 +241,21 @@ export default function Home() {
                   href="mailto:nithinraj@basegraph.app"
                   className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
                 >
-                  Reach out → nithinraj@basegraph.app
+                  Reach out → nithinsj@basegraph.app
+                </Link>
+                <Link 
+                  href="mailto:nithinsudarsan@basegraph.app"
+                  className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
+                >
+                  , nithinsudarsan@basegraph.app
                 </Link>
               </div>
+                <Link 
+                  href="https://discord.gg/gD3dq2as"
+                  className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
+                >
+                  Join our Discord
+                </Link>
             </div>
           </div>
         </section>
@@ -262,7 +267,13 @@ export default function Home() {
               href="https://x.com/basegraph" 
               className="text-caption text-muted-foreground hover:text-foreground transition-colors"
             >
-              Twitter
+              X
+            </Link>
+            <Link 
+              href="https://discord.gg/gD3dq2as" 
+              className="text-caption text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Discord
             </Link>
             <p className="text-caption text-muted-foreground">
               © 2025 Basegraph.
