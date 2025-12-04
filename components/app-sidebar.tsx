@@ -76,7 +76,7 @@ export function AppSidebar() {
                     </AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left leading-tight">
-                    <span className="truncate text-sm font-semibold">
+                    <span className="truncate text-sm font-semibold text-sidebar-foreground">
                       {session?.user?.name || "User"}
                     </span>
                     <span className="truncate text-xs text-muted-foreground">

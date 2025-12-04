@@ -8,9 +8,25 @@ function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
       type={type}
       data-slot="input"
       className={cn(
-        'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-        'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
-        'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+        // Base: Clean, understated
+        'h-9 w-full min-w-0 rounded-md border border-border bg-card px-3 py-1 text-base text-foreground',
+        // Placeholder: Soft but readable
+        'placeholder:text-muted-foreground/70',
+        // Selection: Accent highlight
+        'selection:bg-accent/20 selection:text-foreground',
+        // Transition: Smooth focus
+        'transition-all duration-200 ease-out outline-none',
+        // Focus: Subtle border change, no harsh ring
+        'focus-visible:border-foreground/30 focus-visible:bg-background',
+        // File inputs
+        'file:text-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium',
+        // Disabled
+        'disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
+        // Dark mode
+        'dark:bg-card dark:border-border dark:focus-visible:border-foreground/30',
+        // Invalid state
+        'aria-invalid:border-destructive aria-invalid:focus-visible:border-destructive',
+        'md:text-sm',
         className,
       )}
       {...props}

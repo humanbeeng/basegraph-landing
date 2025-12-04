@@ -1,9 +1,8 @@
 import { Waitlist } from "@/components/waitlist"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { LoginButton } from "@/components/login-button"
 import { AuthRedirect } from "@/components/auth-redirect"
+import { LoginButton } from "@/components/login-button"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function Home() {
   const jsonLd = {
@@ -46,12 +45,9 @@ export default function Home() {
       />
       
       {/* Login Button */}
-      {/* <div className="fixed z-50 flex items-center gap-3" style={{
-        top: 'calc(var(--space-6) + env(safe-area-inset-top))',
-        right: 'calc(4.5rem + env(safe-area-inset-right))'
-      }}>
+      <div className="fixed-top-right-offset flex items-center gap-3">
         <LoginButton />
-      </div> */}
+      </div>
       
       {/* Theme Toggle */}
       <ThemeToggle />
@@ -102,10 +98,10 @@ export default function Home() {
                 </h2>
               </div>
               <div className="stack stack-lg">
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-body-secondary">
                   Edge cases don't live in your codebase—they live in your team's heads. Business logic nuances. Production gotchas. That one integration everyone forgets about.
                 </p>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-body-secondary">
                   Relay asks the right questions. It pulls context from the people who know your product, then maps that against your actual codebase constraints. What you get is a spec that accounts for both the business logic edge cases humans catch and the architectural limitations code analysis reveals.
                 </p>
                 <p className="text-lg text-foreground font-medium">
@@ -127,7 +123,7 @@ export default function Home() {
               {/* Problem with current tools */}
               <div>
                 <h3 className="mb-4 text-muted-foreground">Semantic Search (Cursor, Aider, etc.)</h3>
-                <ul className="stack text-foreground/70">
+                <ul className="stack text-body-tertiary">
                   <li className="flex gap-3">
                     <span className="text-accent mt-1">×</span>
                     <span>Embeddings miss exact import chains and call graphs</span>
@@ -171,9 +167,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-16 p-6 bg-background/50 border border-border rounded-lg">
-              <p className="text-lg text-foreground/90">
-                <strong>Result:</strong> Your AI agent gets a spec with verified imports, actual function signatures, and real architectural constraints—not hallucinated ones. No more "this function doesn't exist" or "wrong number of parameters" errors after 20 minutes of generation.
+            <div className="mt-16 p-6 card-subtle border border-border rounded-lg">
+              <p className="text-lg text-body-secondary">
+                <strong className="text-foreground">Result:</strong> Your AI agent gets a spec with verified imports, actual function signatures, and real architectural constraints—not hallucinated ones. No more "this function doesn't exist" or "wrong number of parameters" errors after 20 minutes of generation.
               </p>
             </div>
           </div>
@@ -189,20 +185,20 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="stack">
                 <h3>Onboarding in Minutes</h3>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-body-secondary">
                   Connect your Linear workspace. Point to your repo. Done.
                 </p>
-                <p className="text-foreground/70">
+                <p className="text-body-tertiary">
                   No training data to upload. No context windows to configure. Relay immediately understands your codebase through static analysis.
                 </p>
               </div>
 
               <div className="stack">
                 <h3>No New Dashboard</h3>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg text-body-secondary">
                   Relay lives in Linear threads. Specs appear as comments. Your workflow stays intact.
                 </p>
-                <p className="text-foreground/70">
+                <p className="text-body-tertiary">
                   Everything happens where you already work. No context-switching to yet another tool.
                 </p>
               </div>
@@ -230,29 +226,29 @@ export default function Home() {
           <div className="page-container py-12 md:py-16">
             <div className="stack stack-lg">
               <h2 id="early-access-heading" className="h4">Early Access</h2>
-              <p className="text-foreground/80">
+              <p className="text-body-secondary">
                 Relay is in private beta. Code indexing currently happens on our servers. Self-hosted deployments are on the roadmap for teams with strict data residency requirements.
               </p>
-              <p className="text-foreground/80">
+              <p className="text-body-secondary">
                 We're working closely with early adopters to shape the product. We'd love to hear your feedback and thoughts.
               </p>
               <div className="pt-2">
                 <Link 
                   href="mailto:nithinraj@basegraph.app"
-                  className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
+                  className="inline-flex items-center gap-2 text-mono text-sm text-link"
                 >
                   Reach out → nithinsj@basegraph.app
                 </Link>
                 <Link 
                   href="mailto:nithinsudarsan@basegraph.app"
-                  className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
+                  className="inline-flex items-center gap-2 text-mono text-sm text-link"
                 >
                   , nithinsudarsan@basegraph.app
                 </Link>
               </div>
                 <Link 
                   href="https://discord.gg/gD3dq2as"
-                  className="inline-flex items-center gap-2 text-mono text-sm text-foreground hover:text-accent transition-colors"
+                  className="inline-flex items-center gap-2 text-mono text-sm text-link"
                 >
                   Join our Discord
                 </Link>

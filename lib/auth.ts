@@ -12,9 +12,14 @@ export const auth = betterAuth({
     //     clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     //     callbackURL: "/api/auth/callback/github",
     // },
-    linear: {
-      clientId: process.env.LINEAR_CLIENT_ID as string,
-      clientSecret: process.env.LINEAR_CLIENT_SECRET as string,
-    },
+    gitlab: { 
+      clientId: process.env.GITLAB_CLIENT_ID as string, 
+      clientSecret: process.env.GITLAB_CLIENT_SECRET as string, 
+      issuer: process.env.GITLAB_ISSUER as string, 
+  }, 
+    // linear: {
+    //   clientId: process.env.LINEAR_CLIENT_ID as string,
+    //   clientSecret: process.env.LINEAR_CLIENT_SECRET as string,
+    // },
   },
 })

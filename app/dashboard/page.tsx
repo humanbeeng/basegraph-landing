@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, RefreshCw, Check } from "lucide-react"
+import { Github, RefreshCw, Check, Gitlab } from "lucide-react"
 import Image from "next/image"
 import LinearIconSvg from "@/assets/linear-icon.svg"
 import { cn } from "@/lib/utils"
@@ -64,12 +64,12 @@ function IntegrationRow({
   isConnected = false,
 }: IntegrationCardProps) {
   return (
-    <div className="flex items-center gap-4 p-4 transition-colors hover:bg-muted/50 rounded-lg">
+    <div className="interactive-row">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-background text-foreground ring-1 ring-inset ring-border/50">
         {icon}
       </div>
       <div className="flex-1 min-w-0 grid gap-0.5">
-        <h4 className="text-sm font-medium leading-none">{title}</h4>
+        <h4 className="text-sm font-medium leading-none text-foreground">{title}</h4>
         <p className="text-sm text-muted-foreground leading-normal">
           {description}
         </p>
@@ -79,13 +79,11 @@ function IntegrationRow({
         disabled={isLoading || isConnected}
         variant="outline"
         size="sm"
-        className={
-          `min-w-[90px] h-8 text-xs font-medium transition-all
-          ${isConnected 
-            ? "bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/15 border-emerald-500/20" 
-            : "hover:bg-primary hover:text-primary-foreground"
-          }`
-        }
+        className={cn(
+          "min-w-[90px] h-8 text-xs font-medium",
+          isConnected && "state-connected",
+          !isConnected && !isLoading && "hover:bg-primary hover:text-primary-foreground"
+        )}
       >
         {isLoading ? (
           <>
@@ -113,8 +111,9 @@ export default function DashboardPage() {
   // Integration states
   const [linearLoading, setLinearLoading] = useState(false)
   const [linearConnected, setLinearConnected] = useState(false)
-  const [githubLoading, setGithubLoading] = useState(false)
-  const [githubConnected, setGithubConnected] = useState(false)
+  const [gitlabLoading, setGitlabLoading] = useState(false)
+  const [gitlabConnected, setGitlabConnected] = useState(false)
+  // const [githubConnected, setGithubConnected] = useState(false)
   
   // Animation state
   const [showCard, setShowCard] = useState(false)
@@ -153,13 +152,13 @@ export default function DashboardPage() {
     setLinearConnected(true)
   }
 
-  const handleGithubSync = async () => {
-    setGithubLoading(true)
+  const handleGitlabSync = async () => {
+    setGitlabLoading(true)
     // TODO: Implement actual GitHub OAuth flow
     // Simulating API call for now
     await new Promise(resolve => setTimeout(resolve, 1500))
-    setGithubLoading(false)
-    setGithubConnected(true)
+    setGitlabLoading(false)
+    setGitlabConnected(true)
   }
 
   // Loading state
@@ -184,11 +183,13 @@ export default function DashboardPage() {
         <div className="mb-10">
           <Typewriter 
             messages={["Hey " + session.user?.name?.split(" ")[0] + "!"]} 
-            className="h3" 
+            className="h3"
+            lineClassName="text-foreground"
           />
           <Typewriter 
             messages={messages} 
-            className="text-lg text-muted-foreground mt-2" 
+            className="mt-2" 
+            lineClassName="text-lg text-muted-foreground"
             onComplete={() => setShowCard(true)}
           />
         </div>
@@ -199,22 +200,22 @@ export default function DashboardPage() {
           showCard ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         )}>
           <Card className="bg-card/50 shadow-none border-border/60 p-2 gap-1">
-            <IntegrationRow
+            {/* <IntegrationRow
               icon={<LinearIcon className="size-5" />}
               title="Sync with Linear"
               description="This allows Relay to interact with your teammates"
               onSync={handleLinearSync}
               isLoading={linearLoading}
               isConnected={linearConnected}
-            />
+            /> */}
             
             <IntegrationRow
-              icon={<Github className="size-5" />}
-              title="Sync with GitHub"
-              description="This allows Relay to read and understand your codebase"
-              onSync={handleGithubSync}
-              isLoading={githubLoading}
-              isConnected={githubConnected}
+              icon={<Gitlab className="size-5" />}
+              title="Sync with GitLab"
+              description="Allows Relay to interact with your teammates and index your repositories"
+              onSync={handleGitlabSync}
+              isLoading={gitlabLoading}
+              isConnected={gitlabConnected}
             />
           </Card>
         </div>

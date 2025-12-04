@@ -107,55 +107,67 @@
   --header-height-sm: 2.5rem; /* 40px - compact header */
 
   /* ==========================================================================
-     COLOR TOKENS - Light Mode (Warm cream + muted rust + charcoal)
+     COLOR TOKENS - Light Mode (Refined Off-White / Paper)
+     ========================================================================== 
+     
+     Design Philosophy: Premium uncoated paper aesthetic
+     - High lightness, near-achromatic (subtle warmth without cream)
+     - Rich ink-like text for crisp readability
+     - Sophisticated sienna accent for confident punctuation
      ========================================================================== */
   
-  --background: oklch(0.96 0.015 85);
-  --foreground: oklch(0.30 0.02 60);
+  /* Backgrounds: The color of quality paper in good light */
+  --background: oklch(0.978 0.003 70);
+  --foreground: oklch(0.15 0.008 50);
   
-  --card: oklch(0.94 0.015 80);
-  --card-foreground: oklch(0.30 0.02 60);
+  /* Cards: Lift slightly — cleaner, almost white */
+  --card: oklch(0.99 0.002 70);
+  --card-foreground: oklch(0.15 0.008 50);
   
-  --popover: oklch(0.94 0.015 80);
-  --popover-foreground: oklch(0.30 0.02 60);
+  --popover: oklch(0.99 0.002 70);
+  --popover-foreground: oklch(0.15 0.008 50);
   
-  --primary: oklch(0.28 0.01 60);
-  --primary-foreground: oklch(0.96 0.015 85);
+  /* Primary: Deep ink — rich but not harsh */
+  --primary: oklch(0.18 0.006 50);
+  --primary-foreground: oklch(0.978 0.003 70);
   
-  --secondary: oklch(0.55 0.11 38);
-  --secondary-foreground: oklch(0.96 0.015 85);
+  /* Accent: Refined sienna — confident without shouting */
+  --secondary: oklch(0.52 0.105 35);
+  --secondary-foreground: oklch(0.978 0.003 70);
   
-  --muted: oklch(0.90 0.012 75);
-  --muted-foreground: oklch(0.48 0.02 60);
+  /* Muted: Soft stone grey */
+  --muted: oklch(0.945 0.004 70);
+  --muted-foreground: oklch(0.42 0.008 50);
   
-  --accent: oklch(0.55 0.11 38);
-  --accent-foreground: oklch(0.96 0.015 85);
+  --accent: oklch(0.52 0.105 35);
+  --accent-foreground: oklch(0.978 0.003 70);
   
-  --destructive: oklch(0.50 0.15 25);
-  --destructive-foreground: oklch(0.96 0.015 85);
+  --destructive: oklch(0.50 0.14 25);
+  --destructive-foreground: oklch(0.978 0.003 70);
   
-  /* Semantic: Success (muted green) */
-  --success: oklch(0.55 0.12 145);
-  --success-foreground: oklch(0.96 0.015 85);
+  /* Semantic: Success (sage green) */
+  --success: oklch(0.52 0.10 150);
+  --success-foreground: oklch(0.978 0.003 70);
   
-  /* Semantic: Warning (amber) */
-  --warning: oklch(0.65 0.14 80);
-  --warning-foreground: oklch(0.25 0.02 60);
+  /* Semantic: Warning (warm amber) */
+  --warning: oklch(0.60 0.13 75);
+  --warning-foreground: oklch(0.18 0.006 50);
   
-  /* Semantic: Info (blue) */
-  --info: oklch(0.55 0.12 240);
-  --info-foreground: oklch(0.96 0.015 85);
+  /* Semantic: Info (steel blue) */
+  --info: oklch(0.52 0.09 245);
+  --info-foreground: oklch(0.978 0.003 70);
   
-  --border: oklch(0.85 0.015 75);
-  --input: oklch(0.88 0.01 75);
-  --ring: oklch(0.55 0.11 38);
+  /* Borders: Whisper-thin definition */
+  --border: oklch(0.915 0.004 70);
+  --input: oklch(0.94 0.003 70);
+  --ring: oklch(0.52 0.105 35);
   
-  /* Chart Colors */
-  --chart-1: oklch(0.55 0.11 38);
-  --chart-2: oklch(0.55 0.12 130);
-  --chart-3: oklch(0.60 0.10 210);
-  --chart-4: oklch(0.50 0.08 25);
-  --chart-5: oklch(0.65 0.10 100);
+  /* Chart Colors — muted, editorial palette */
+  --chart-1: oklch(0.52 0.105 35);
+  --chart-2: oklch(0.50 0.09 150);
+  --chart-3: oklch(0.55 0.08 220);
+  --chart-4: oklch(0.48 0.07 25);
+  --chart-5: oklch(0.58 0.09 90);
   
   /* Border Radius Scale */
   --radius: 0.25rem;
@@ -166,21 +178,21 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-full: 9999px;
   
-  /* Sidebar */
-  --sidebar: oklch(0.94 0.015 80);
-  --sidebar-foreground: oklch(0.30 0.02 60);
-  --sidebar-primary: oklch(0.28 0.01 60);
-  --sidebar-primary-foreground: oklch(0.96 0.015 85);
-  --sidebar-accent: oklch(0.90 0.012 75);
-  --sidebar-accent-foreground: oklch(0.30 0.02 60);
-  --sidebar-border: oklch(0.85 0.015 75);
-  --sidebar-ring: oklch(0.55 0.11 38);
+  /* Sidebar: Slightly recessed from main content */
+  --sidebar: oklch(0.965 0.003 70);
+  --sidebar-foreground: oklch(0.15 0.008 50);
+  --sidebar-primary: oklch(0.18 0.006 50);
+  --sidebar-primary-foreground: oklch(0.978 0.003 70);
+  --sidebar-accent: oklch(0.945 0.004 70);
+  --sidebar-accent-foreground: oklch(0.15 0.008 50);
+  --sidebar-border: oklch(0.915 0.004 70);
+  --sidebar-ring: oklch(0.52 0.105 35);
   
-  /* Scrollbar */
-  --scrollbar-track: oklch(0.90 0.012 75);
-  --scrollbar-thumb: oklch(0.55 0.11 38);
-  --scrollbar-thumb-hover: oklch(0.50 0.12 35);
-  --scrollbar-border: oklch(0.90 0.012 75);
+  /* Scrollbar: Subtle, refined */
+  --scrollbar-track: oklch(0.945 0.004 70);
+  --scrollbar-thumb: oklch(0.70 0.02 70);
+  --scrollbar-thumb-hover: oklch(0.52 0.105 35);
+  --scrollbar-border: oklch(0.945 0.004 70);
   
   /* ==========================================================================
      ANIMATION TOKENS
@@ -197,71 +209,82 @@
 
 /* ==========================================================================
    DARK MODE COLOR TOKENS
+   ========================================================================== 
+   
+   Design Philosophy: Inverted paper — soft charcoal, not pure black
+   - Deep but warm blacks (not harsh/cold)
+   - Off-white text that matches light mode background
+   - Same accent carries across modes
    ========================================================================== */
 
 .dark {
-  --background: oklch(0.15 0.005 60);
-  --foreground: oklch(0.95 0.005 60);
+  /* Background: Deep charcoal with warmth */
+  --background: oklch(0.14 0.004 50);
+  --foreground: oklch(0.94 0.003 70);
   
-  --card: oklch(0.18 0.005 60);
-  --card-foreground: oklch(0.95 0.005 60);
+  /* Cards: Slightly lifted */
+  --card: oklch(0.17 0.004 50);
+  --card-foreground: oklch(0.94 0.003 70);
   
-  --popover: oklch(0.16 0.005 60);
-  --popover-foreground: oklch(0.95 0.005 60);
+  --popover: oklch(0.16 0.004 50);
+  --popover-foreground: oklch(0.94 0.003 70);
   
-  --primary: oklch(0.92 0.005 60);
-  --primary-foreground: oklch(0.18 0.005 60);
+  /* Primary: Inverted — light on dark */
+  --primary: oklch(0.92 0.003 70);
+  --primary-foreground: oklch(0.17 0.004 50);
   
-  --secondary: oklch(0.65 0.12 45);
-  --secondary-foreground: oklch(0.15 0.005 60);
+  /* Accent: Same sienna, slightly brighter for dark */
+  --secondary: oklch(0.60 0.12 38);
+  --secondary-foreground: oklch(0.14 0.004 50);
   
-  --muted: oklch(0.25 0.005 60);
-  --muted-foreground: oklch(0.65 0.005 60);
+  /* Muted surfaces */
+  --muted: oklch(0.22 0.004 50);
+  --muted-foreground: oklch(0.62 0.004 70);
   
-  --accent: oklch(0.65 0.12 45);
-  --accent-foreground: oklch(0.15 0.005 60);
+  --accent: oklch(0.60 0.12 38);
+  --accent-foreground: oklch(0.14 0.004 50);
   
-  --destructive: oklch(0.50 0.15 25);
-  --destructive-foreground: oklch(0.95 0.005 60);
+  --destructive: oklch(0.55 0.14 25);
+  --destructive-foreground: oklch(0.94 0.003 70);
   
   /* Semantic: Success */
-  --success: oklch(0.60 0.13 145);
-  --success-foreground: oklch(0.15 0.005 60);
+  --success: oklch(0.58 0.11 150);
+  --success-foreground: oklch(0.14 0.004 50);
   
   /* Semantic: Warning */
-  --warning: oklch(0.70 0.14 80);
-  --warning-foreground: oklch(0.18 0.005 60);
+  --warning: oklch(0.68 0.13 75);
+  --warning-foreground: oklch(0.17 0.004 50);
   
   /* Semantic: Info */
-  --info: oklch(0.60 0.12 240);
-  --info-foreground: oklch(0.15 0.005 60);
+  --info: oklch(0.58 0.10 245);
+  --info-foreground: oklch(0.14 0.004 50);
   
-  --border: oklch(0.25 0.005 60);
-  --input: oklch(0.25 0.005 60);
-  --ring: oklch(0.65 0.12 45);
+  --border: oklch(0.24 0.004 50);
+  --input: oklch(0.24 0.004 50);
+  --ring: oklch(0.60 0.12 38);
   
-  /* Chart Colors */
-  --chart-1: oklch(0.65 0.12 45);
-  --chart-2: oklch(0.60 0.12 130);
-  --chart-3: oklch(0.65 0.10 210);
-  --chart-4: oklch(0.55 0.08 25);
-  --chart-5: oklch(0.70 0.10 100);
+  /* Chart Colors — same palette, adjusted for dark */
+  --chart-1: oklch(0.60 0.12 38);
+  --chart-2: oklch(0.58 0.10 150);
+  --chart-3: oklch(0.62 0.09 220);
+  --chart-4: oklch(0.54 0.08 25);
+  --chart-5: oklch(0.65 0.10 90);
   
   /* Sidebar */
-  --sidebar: oklch(0.16 0.005 60);
-  --sidebar-foreground: oklch(0.95 0.005 60);
-  --sidebar-primary: oklch(0.92 0.005 60);
-  --sidebar-primary-foreground: oklch(0.18 0.005 60);
-  --sidebar-accent: oklch(0.25 0.005 60);
-  --sidebar-accent-foreground: oklch(0.95 0.005 60);
-  --sidebar-border: oklch(0.25 0.005 60);
-  --sidebar-ring: oklch(0.65 0.12 45);
+  --sidebar: oklch(0.15 0.004 50);
+  --sidebar-foreground: oklch(0.94 0.003 70);
+  --sidebar-primary: oklch(0.92 0.003 70);
+  --sidebar-primary-foreground: oklch(0.17 0.004 50);
+  --sidebar-accent: oklch(0.22 0.004 50);
+  --sidebar-accent-foreground: oklch(0.94 0.003 70);
+  --sidebar-border: oklch(0.24 0.004 50);
+  --sidebar-ring: oklch(0.60 0.12 38);
   
   /* Scrollbar */
-  --scrollbar-track: oklch(0.25 0.005 60);
-  --scrollbar-thumb: oklch(0.65 0.12 45);
-  --scrollbar-thumb-hover: oklch(0.70 0.13 45);
-  --scrollbar-border: oklch(0.25 0.005 60);
+  --scrollbar-track: oklch(0.22 0.004 50);
+  --scrollbar-thumb: oklch(0.40 0.02 50);
+  --scrollbar-thumb-hover: oklch(0.60 0.12 38);
+  --scrollbar-border: oklch(0.22 0.004 50);
 }
 
 /* ==========================================================================
@@ -600,6 +623,158 @@
   
   .status-dot-pulse {
     animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* ==========================================================================
+     FIXED POSITIONING WITH SAFE AREAS
+     ========================================================================== */
+  
+  /* Fixed top-right position (for theme toggle, login button, etc.) */
+  .fixed-top-right {
+    position: fixed;
+    z-index: 50;
+    top: calc(var(--space-6) + env(safe-area-inset-top));
+    right: calc(var(--space-6) + env(safe-area-inset-right));
+  }
+  
+  /* Offset variants for stacking multiple fixed elements */
+  .fixed-top-right-offset {
+    position: fixed;
+    z-index: 50;
+    top: calc(var(--space-6) + env(safe-area-inset-top));
+    right: calc(4.5rem + env(safe-area-inset-right));
+  }
+
+  /* ==========================================================================
+     ICON CONTAINERS
+     ========================================================================== */
+  
+  /* Standard icon container with ring border */
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: var(--radius-lg);
+    background-color: var(--background);
+    color: var(--foreground);
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+  
+  .icon-container-sm {
+    height: 2rem;
+    width: 2rem;
+  }
+  
+  .icon-container-md {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  
+  .icon-container-lg {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  /* ==========================================================================
+     STATE STYLES
+     ========================================================================== */
+  
+  /* Connected/Success state for buttons and badges */
+  .state-connected {
+    background-color: oklch(0.52 0.10 150 / 0.1);
+    color: oklch(0.45 0.12 150);
+    border-color: oklch(0.52 0.10 150 / 0.2);
+  }
+  
+  .state-connected:hover {
+    background-color: oklch(0.52 0.10 150 / 0.15);
+  }
+  
+  .dark .state-connected {
+    background-color: oklch(0.58 0.11 150 / 0.15);
+    color: oklch(0.65 0.12 150);
+    border-color: oklch(0.58 0.11 150 / 0.25);
+  }
+  
+  .dark .state-connected:hover {
+    background-color: oklch(0.58 0.11 150 / 0.2);
+  }
+  
+  /* Pending/Loading state */
+  .state-pending {
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    border-color: var(--border);
+  }
+
+  /* ==========================================================================
+     TEXT UTILITIES
+     ========================================================================== */
+  
+  /* Secondary body text - slightly muted but still readable */
+  .text-body-secondary {
+    color: var(--foreground);
+    opacity: 0.8;
+  }
+  
+  /* Tertiary body text - more muted for less important content */
+  .text-body-tertiary {
+    color: var(--foreground);
+    opacity: 0.7;
+  }
+  
+  /* Link with hover accent */
+  .text-link {
+    color: var(--foreground);
+    transition: color var(--duration-fast) var(--ease-default);
+  }
+  
+  .text-link:hover {
+    color: var(--accent);
+  }
+
+  /* ==========================================================================
+     INTERACTIVE ROW
+     ========================================================================== */
+  
+  /* Reusable interactive row pattern (for integration cards, list items, etc.) */
+  .interactive-row {
+    display: flex;
+    align-items: center;
+    gap: var(--component-gap);
+    padding: var(--component-gap);
+    border-radius: var(--radius-lg);
+    transition: background-color var(--duration-fast) var(--ease-default);
+  }
+  
+  .interactive-row:hover {
+    background-color: color-mix(in oklch, var(--muted) 50%, transparent);
+  }
+
+  /* ==========================================================================
+     CARD VARIANTS
+     ========================================================================== */
+  
+  /* Subtle card - less prominent */
+  .card-subtle {
+    background-color: color-mix(in oklch, var(--card) 50%, transparent);
+    border-color: color-mix(in oklch, var(--border) 60%, transparent);
+    box-shadow: none;
+  }
+
+  /* ==========================================================================
+     ASIDE / SIDEBAR PANEL
+     ========================================================================== */
+  
+  /* Right aside panel (changelog, etc.) */
+  .aside-panel {
+    border-left: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
+    background-color: color-mix(in oklch, var(--background) 50%, transparent);
+    backdrop-filter: blur(8px);
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: 0;
   }
 }
 
